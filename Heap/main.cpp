@@ -26,7 +26,12 @@ int main(int argc, const char * argv[]) {
         myHeap.Insert(21);
         myHeap.Insert(15);
         
-        std::cout<<"Min element in heap="<<myHeap.min()<<std::endl;
+        while(!myHeap.empty())
+        {
+            std::cout<<myHeap.DelMin()<<"\t";
+        }
+        std::cout<<std::endl;
+        
     } catch (const char *err) {
         std::cout<<"Caught error "<<err<<std::endl;
     }
