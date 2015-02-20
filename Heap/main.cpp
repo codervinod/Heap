@@ -9,6 +9,10 @@
 #include <iostream>
 #include "Heap.h"
 #include <string>
+#include <vector>
+
+
+using namespace std;
 
 int main(int argc, const char * argv[]) {
     
@@ -26,11 +30,24 @@ int main(int argc, const char * argv[]) {
         myHeap.Insert(21);
         myHeap.Insert(15);
         
+        cout<<"first heap:"<<endl;
         while(!myHeap.empty())
         {
-            std::cout<<myHeap.DelMin()<<"\t";
+            cout<<myHeap.DelMin()<<"\t";
         }
-        std::cout<<std::endl;
+        cout<<std::endl;
+        
+        vector<int> ar = {3,4,12,39,34,21,64,19,51,42};
+        
+        Heap<int> myHeap2(ar);
+        
+        cout<<"second heap:"<<endl;
+        while(!myHeap2.empty())
+        {
+            cout<<myHeap2.DelMin()<<"\t";
+        }
+        cout<<endl;
+        
         
     } catch (const char *err) {
         std::cout<<"Caught error "<<err<<std::endl;

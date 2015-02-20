@@ -17,6 +17,7 @@ class Heap
 {
 public:
     Heap() {}
+    Heap(const std::vector<T> &ar):_heap(ar) {}
     virtual ~Heap() {}
     
     void Heapify(unsigned int i)
@@ -39,6 +40,9 @@ public:
                 T tmp = _heap[i];
                 _heap[i] = _heap[minChild];
                 _heap[minChild] = tmp;
+            }else
+            {
+                break;
             }
             
             i = minChild;
@@ -91,6 +95,17 @@ public:
             throw "Heap is empty";
         
         return _heap[0];
+    }
+    
+    void build()
+    {
+        int i=getParentIndex(_heap.size()-1);
+        
+        while(i>=0)
+        {
+            Heapify(i);
+            --i;
+        }
     }
     
     bool empty() {return _heap.empty();}
