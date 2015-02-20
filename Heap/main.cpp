@@ -7,9 +7,29 @@
 //
 
 #include <iostream>
+#include "Heap.h"
+#include <string>
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
+    
+    Heap<int> myHeap;
+    try {
+        //std::cout<<"Min element in heap="<<myHeap.min()<<std::endl;
+        
+        myHeap.Insert(53);
+        myHeap.Insert(30);
+        myHeap.Insert(23);
+        myHeap.Insert(20);
+        myHeap.Insert(18);
+        myHeap.Insert(2);
+        myHeap.Insert(57);
+        myHeap.Insert(21);
+        myHeap.Insert(15);
+        
+        std::cout<<"Min element in heap="<<myHeap.min()<<std::endl;
+    } catch (const char *err) {
+        std::cout<<"Caught error "<<err<<std::endl;
+    }
+    
     return 0;
 }
